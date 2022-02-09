@@ -1,0 +1,32 @@
+{
+  "name": "hello-world-dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hello-world.js",
+  "scripts": {
+    "start": "node hello-world.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamixDev/hello-world-dev.git"
+  },
+  "author": "SamixDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamixDev/hello-world-dev/issues"
+  },
+  "homepage": "https://github.com/SamixDev/hello-world-dev#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "eth-ens-namehash": "^2.0.8",
+    "express": "^4.17.1",
+    "graphql": "^15.7.2",
+    "graphql-request": "^3.7.0",
+    "graphql-tag": "^2.12.6",
+    "moralis": "^1.2.3",
+    "node-fetch": "^3.1.0"
+  }
+}
