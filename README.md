@@ -42,3 +42,7 @@ Person of contact: <br>- Discord ID: **Snowdot#8235**<br> - Email address: co.pa
 4) open a new terminal and run the command ```$ yarn start``` (make sure you are in the right directory);
 5) set in the ```.env``` the Unstoppable Domains credentials.
 
+## Thank you!
+If you like our app and would like to stay up to date with the latest developments, kindly consider:
+- star the project on Github: https://github.com/SamixDev/hello-world;
+- follow it on Twitter: https://twitter.com/hwdotsocial.
