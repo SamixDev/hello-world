@@ -1,0 +1,37 @@
+.social-card {
+    display: grid;
+    grid-template-columns: 40px 1fr 90px;
+    grid-gap: 5px;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.social-card__img {
+    background: var(--rainbow);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.social-card__img img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.social-card__details__address {
+    font-weight: 700;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.social-card__details__recommendation {
+    color: var(--dark-gray);
+    font-size: 13px;
+    max-width: 150px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,9 @@
+.common-btn {
+    display: flex;
+    color: var(--dark-gray);
+}
+
+.common-btn strong {
+    color: var(--black);
+    margin: 0px 4px;
+}

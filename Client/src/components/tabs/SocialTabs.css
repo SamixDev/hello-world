@@ -1,0 +1,6 @@
+.social-tabs__links {
+    border-bottom: 1px solid var(--light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}

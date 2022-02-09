@@ -1,0 +1,38 @@
+.featured-card {
+    display: grid;
+    grid-template-columns: 60px 1fr 90px;
+    grid-gap: 20px;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.featured-card__img {
+    background: var(--rainbow);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.featured-card__img img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.featured-card__details__address {
+    font-weight: 700;
+    font-size: 20px;
+    max-width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.featured-card__details__recommendation {
+    color: var(--dark-gray);
+    font-size: 16px;
+    max-width: 100%;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

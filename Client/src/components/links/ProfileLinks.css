@@ -1,0 +1,27 @@
+.profile-links {
+    display: flex;
+    align-items: center;
+}
+
+.profile-links a:hover {
+    border-radius: 6px;
+}
+
+.profile-links__link {
+    background-color: var(--medium-gray);
+    border-radius: 4px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 20px;
+    margin-right: 10px;
+    padding: 4px 10px;
+}
+
+.profile-links__link svg {
+    width: auto;
+    height: 16px;
+    margin-right: 5px;
+}

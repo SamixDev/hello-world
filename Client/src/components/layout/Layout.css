@@ -1,0 +1,128 @@
+.container {
+    background-color: var(--light);
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper {
+    max-width: 800px;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    overflow: hidden;
+}
+
+header {
+    background-color: var(--white);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    z-index: 1;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    min-height: 0px;
+}
+
+.content__column {
+    width: 100%;
+    flex: 1;
+    overflow: auto;
+    position: relative;
+}
+
+.column__left {
+    border-left: 1px solid var(--light-gray);
+    border-right: 1px solid var(--light-gray);
+    width: 100%;
+    max-width: 800px;
+    padding-bottom: 60px;
+}
+
+.column__right {
+    display: none;
+    width: 100%;
+    max-height: 100%;
+    max-width: 370px;
+}
+
+.column__right .column {
+    background-color: var(--light-gray);
+    border-radius: 6px;
+    padding: 20px 0px;
+    margin: 20px;
+}
+
+/*==========  Mobile First Method  ==========*/
+@media only screen and (min-width : 500px) {
+
+}
+
+@media only screen and (min-width : 500px) and (min-height : 500px) {
+    header {
+        max-width: 80px;
+        height: 100%;
+        position: inherit;
+    }
+
+    .column__left {
+        max-width: 100%;
+    }
+
+    .column__right {
+        display: none;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    .wrapper {
+        max-width: 1300px;
+    }
+
+    header {
+        max-width: 80px;
+        height: 100%;
+        position: inherit;
+    }
+
+    .content {
+        justify-content: space-between;
+    }
+
+    .column__left {
+        max-width: 800px;
+    }
+
+    .column__right {
+        display: block;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    header {
+        max-width: 200px;
+        height: 100%;
+        position: inherit;
+    }
+}
+  

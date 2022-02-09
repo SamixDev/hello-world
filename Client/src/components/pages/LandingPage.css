@@ -1,0 +1,46 @@
+.landing {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.landing__left {
+    display: none;
+}
+
+.landing__right {
+    background: var(--rainbow);
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.landing__right__login {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.landing__right__login h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.landing__right__login h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 992px) {
+    .landing__right {
+        background: transparent;
+        width: 45%;
+    }
+
+    .landing__left {
+        display: block;
+        background: var(--rainbow);
+        width: 55%;
+        min-height: 100vh;
+    }
+}

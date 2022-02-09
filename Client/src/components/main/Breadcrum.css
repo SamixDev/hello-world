@@ -1,0 +1,27 @@
+.breadcrum {
+    background-color: hsla(0, 0%, 100%, 0.9);
+     width: 100%;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.breadcrum a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0px 20px;
+}
+
+.breadcrum svg {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.breadcrum div {
+    font-size: 18px;
+    font-weight: 700;
+}

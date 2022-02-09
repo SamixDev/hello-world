@@ -1,0 +1,17 @@
+.logout-btn {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 26px 1fr 20px;
+    width: 100%;
+    min-height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.logout-btn svg {
+    font-size: 20px;
+}
+
+.logout-btn:hover {
+    color: var(--medium-gray);
+}

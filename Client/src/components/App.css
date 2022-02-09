@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Nunito+Sans:wght@200;300;400;600;700&display=swap");
+
+:root {
+  --black: hsla(0, 0%, 10%, 1);
+  --dark-gray: hsla(0, 0%, 50%, 1);
+  --medium-gray: hsla(0, 0%, 85%, 1);
+  --light-gray: hsla(0, 0%, 96%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+  --blue-pastel: hsla(190, 64%, 81%, 1);
+  --green-pastel: hsla(106, 45%, 86%, 1);
+  --pink-pastel: hsla(3, 44%, 90%, 1);
+  --yellow-pastel: hsla(45, 81%, 84%, 1);
+  --purple-pastel: hsla(240, 85%, 90%, 1);
+  --red-pastel: hsla(338, 85%, 65%, 1);
+  --rainbow: linear-gradient(45deg, #b1e4ee, #d4eccd, #f1dcdb,  #f7e6b3, #cfcffb);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--black);
+}
+
+a {
+  color: var(--black);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: hsla(0, 0%, 94%, 1);
+  border-radius: 0px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  outline: none;
+}
+
+h1, h2, h3 {
+  font-family: "Audiowide", cursive;
+}
+
+iframe {
+  display: none;
+}
+
+.observer {
+  display: block;
+  width: 100%;
+  min-height: 1px;
+}
+
+::-webkit-scrollbar {
+  border-radius: 10px;
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--medium-gray);
+  border-radius: 10px;
+}

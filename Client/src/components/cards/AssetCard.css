@@ -1,0 +1,33 @@
+.asset-card {
+    border-bottom: 1px solid var(--light-gray);
+    display: grid;
+    grid-template-columns: 30px 1fr 120px;
+    align-items: center;
+    grid-gap: 20px;
+    width: 100%;
+    padding: 20px;
+}
+
+.asset-card__img {
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    width: 30px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.asset-card__img img {
+    border-radius: 50%;
+    width: 30px;
+    height: auto;
+}
+
+.asset-card__balance {
+    text-align: right;
+}
+
+.asset-card__balance div:first-child {
+    font-weight: 700;
+    font-size: 18px;
+}

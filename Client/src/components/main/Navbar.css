@@ -1,0 +1,27 @@
+.navbar {
+    background-color: var(--light);
+    height: 100%;
+}
+
+.navbar__links {
+    border-top: 1px solid var(--light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
+
+@media only screen and (min-width : 500px) and (min-height : 500px) {
+    .navbar__links {
+        border-top: 1px solid transparent;
+        display: block;
+    }
+}
+
+@media only screen and (min-width : 992px) {
+    .navbar__links {
+        border-top: 1px solid transparent;
+        display: block;
+    }
+}

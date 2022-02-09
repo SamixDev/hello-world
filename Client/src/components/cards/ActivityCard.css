@@ -1,0 +1,49 @@
+.activity-card {
+    border-bottom: 1px solid var(--light-gray);
+    display: grid;
+    grid-template-columns: 30px 1fr 30px;
+    grid-gap: 20px;
+    width: 100%;
+    line-height: 30px;
+    padding: 10px 20px;
+}
+
+.activity-card img {
+    width: auto;
+    height: 15px;
+}
+
+.activity-card strong {
+    margin: 0px 4px;
+}
+
+.activity-card__details__in div,
+.activity-card__details__out div {
+    display: flex;
+    align-items: center;
+    line-height: 24px;
+}
+
+.activity-card__icon {
+    border-radius: 4px;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.activity-card__icon.in {
+    background-color: var(--green-pastel);
+}
+
+.activity-card__icon.out {
+    background-color: var(--pink-pastel);
+}
+
+.activity-card__time {
+    justify-self: flex-end;
+    color: var(--dark-gray);
+}
+
+.activity-card__details__in div {
+    display: block;
+}

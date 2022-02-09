@@ -1,0 +1,30 @@
+.follow-card {
+    display: grid;
+    grid-template-columns: 40px 1fr 90px;
+    grid-gap: 10px;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.follow-card__img {
+    background: var(--rainbow);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.follow-card__img img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.follow-card__details {
+    font-weight: 700;
+    font-size: 18px;
+    max-width: 380px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

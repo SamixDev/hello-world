@@ -1,0 +1,25 @@
+.login-btn {
+    border: 1px solid var(--black);
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 300;
+    width: 100%;
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.login-btn img {
+    filter: invert(1);
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.login-btn:hover {
+    border: 1px solid var(--dark-gray);
+    background-color: var(--light-gray);
+}
