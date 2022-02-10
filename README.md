@@ -9,6 +9,7 @@ The application offers a variaty of features, such as:
 
 Project link: https://helloworld.social<br>
 Public repo: https://github.com/SamixDev/hello-world<br>
+Recorded video demo of CyberConnect API integration: https://youtu.be/Kv1_VvPineE<br>
 Recorded video demo of Unstoppable Domains Login integration: https://youtu.be/pCX0SSV39jk<br>
 
 Person of contact: <br>- Discord ID: **GodSamix#0001**<br> - Email address: samer.hd.ah@gmail.com<br>
@@ -42,3 +43,7 @@ Person of contact: <br>- Discord ID: **Snowdot#8235**<br> - Email address: co.pa
 4) open a new terminal and run the command ```$ yarn start``` (make sure you are in the right directory);
 5) set in the ```.env``` the Unstoppable Domains credentials.
 
+## Thank you!
+If you like our app and would like to stay up to date with the latest developments, kindly consider:
+- star the project on Github: https://github.com/SamixDev/hello-world;
+- follow it on Twitter: https://twitter.com/hwdotsocial.
