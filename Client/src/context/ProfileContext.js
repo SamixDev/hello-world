@@ -5,7 +5,6 @@ import {
     getPoapData,
     getNFTData,
     getTransfersData,
-    getSocialData,
     getCommon
 } from "../api";
 import { AuthContext } from "./AuthContext";
@@ -24,10 +23,6 @@ export default function ProfileProvider({ children }) {
     const [assetsCount, setAssetsCount] = useState(100);
     const [nftsCount, setNftsCount] = useState(0);
     const [poapsCount, setPoapsCount] = useState(0);
-    // ~~~ Data manipulation ~~~
-    const [pageFollowers, setPageFollowers] = useState(0);
-    const [pageFollowing, setPageFollowing] = useState(0);
-
     // ~~~ Keeping tabs on loading, error and success ~~~
     const [state, setState] = useState({
         data: {},
@@ -50,16 +45,6 @@ export default function ProfileProvider({ children }) {
         error: ""
     });
     const [stateActivity, setStateActivity] = useState({
-        data: [],
-        loading: true,
-        error: ""
-    });
-    const [stateFollowers, setStateFollowers] = useState({
-        data: [],
-        loading: true,
-        error: ""
-    });
-    const [stateFollowing, setStateFollowing] = useState({
         data: [],
         loading: true,
         error: ""
@@ -282,89 +267,15 @@ export default function ProfileProvider({ children }) {
         }
     }, [account, address]);
 
-    // ~~~ Fetching data for Followers ~~~
-    useEffect(() => {
-        if(!account || !address) return;
-
-        const query = getSocialData(address, "followers", pageFollowers);
-        query
-            .then(res => {
-                setStateFollowers(prev => {
-                    return {
-                        data: [...prev.data, ...res.followers],
-                        loading: false,
-                        error: ""
-                    };
-                });
-            })
-            .catch(err => {
-                if(isAbortError(err)) {
-                    console.log("The user aborted a request.");
-                    setStateFollowers({
-                        data: [],
-                        loading: true,
-                        error: ""
-                    });
-                } else {
-                    console.error(err.message);
-                    setStateFollowers({
-                        data: [],
-                        loading: false,
-                        error: err.message
-                    });
-                }
-            });
-        return () => {
-            query.cancel();
-        }
-    }, [account, address, pageFollowers]);
-
-    // ~~~ Fetching data for Following ~~~
-    useEffect(() => {
-        if(!account || !address) return;
-
-        const query = getSocialData(address, "followings", pageFollowing);
-        query
-            .then(res => {
-                setStateFollowing(prev => {
-                    return {
-                        data: [...prev.data, ...res.followings],
-                        loading: false,
-                        error: ""
-                    };
-                });
-            })
-            .catch(err => {
-                if(isAbortError(err)) {
-                    console.log("The user aborted a request.");
-                    setStateFollowing({
-                        data: [],
-                        loading: true,
-                        error: ""
-                    });
-                } else {
-                    console.error(err.message);
-                    setStateFollowing({
-                        data: [],
-                        loading: false,
-                        error: err.message
-                    });
-                }
-            });
-        return () => {
-            query.cancel();
-        }
-    }, [account, address, pageFollowing]);
-
     // ~~~ Fetching data for Common ~~~
     useEffect(() => {
         if(!account || !address) return;
-        if(account.toLowerCase() === address.toLowerCase()) return;
         setCommon({
             data: {},
             loading: true,
             error: ""
         });
+        if(account.toLowerCase() === address.toLowerCase()) return;
 
         const query = getCommon(account, address);
         query
@@ -410,12 +321,8 @@ export default function ProfileProvider({ children }) {
                 stateNft: stateNft,
                 statePoap: statePoap,
                 stateActivity: stateActivity,
-                stateFollowers: stateFollowers,
-                stateFollowing: stateFollowing,
                 stateCommon: stateCommon,
-                setAddress: setAddress,
-                setPageFollowing: setPageFollowing,
-                setPageFollowers: setPageFollowers
+                setAddress: setAddress
             }}
         >
             {children}

@@ -1,10 +1,12 @@
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import "./SocialTabs.css";
 import { FOLLOW_PATHS } from "../../helpers/constants";
 import { getPathFromLocation } from "../../helpers/functions";
 import { AuthContext } from "../../context/AuthContext";
 import { ProfileContext } from "../../context/ProfileContext";
 import { useLocation, useParams } from "react-router-dom";
+import { isAbortError } from "../../helpers/functions";
+import { getSocialData } from "../../api";
 import Loading from "../main/Loading";
 import ErrorMsg from "../main/ErrorMsg";
 import TabBtn from "../buttons/TabBtn";
@@ -15,17 +17,106 @@ export default function SocialTabs() {
     const observeFollowingRef = useRef(null);
     const authContext = useContext(AuthContext);
     const profileContext = useContext(ProfileContext);
-    const stateFollowers = profileContext.stateFollowers;
-    const stateFollowing = profileContext.stateFollowing;
+    // const stateFollowers = profileContext.stateFollowers;
+    // const stateFollowing = profileContext.stateFollowing;
     const isFollowingProfile = profileContext.isFollowingProfile;
-    const setPageFollowers = profileContext.setPageFollowers;
-    const setPageFollowing = profileContext.setPageFollowing;
+    // const setPageFollowers = profileContext.setPageFollowers;
+    // const setPageFollowing = profileContext.setPageFollowing;
     const followers_count = profileContext.state.data.followers_count;
     const following_count = profileContext.state.data.following_count;
     const account = authContext.account;
     const address = useParams().user;
     const path = getPathFromLocation(useLocation());
+    // ~~~ Data ~~~
+    const [stateFollowers, setStateFollowers] = useState({
+        data: [],
+        loading: true,
+        error: ""
+    });
+    const [stateFollowing, setStateFollowing] = useState({
+        data: [],
+        loading: true,
+        error: ""
+    });
+    // ~~~ Data manipulation ~~~
+    const [pageFollowers, setPageFollowers] = useState(0);
+    const [pageFollowing, setPageFollowing] = useState(0);
 
+    // ~~~ Fetching data for Followers ~~~
+    useEffect(() => {
+        if(!account || !address) return;
+
+        const query = getSocialData(address, "followers", pageFollowers);
+        query
+            .then(res => {
+                setStateFollowers(prev => {
+                    return {
+                        data: [...prev.data, ...res.followers],
+                        loading: false,
+                        error: ""
+                    };
+                });
+            })
+            .catch(err => {
+                if(isAbortError(err)) {
+                    console.log("The user aborted a request.");
+                    setStateFollowers({
+                        data: [],
+                        loading: true,
+                        error: ""
+                    });
+                } else {
+                    console.error(err.message);
+                    setStateFollowers({
+                        data: [],
+                        loading: false,
+                        error: err.message
+                    });
+                }
+            });
+        return () => {
+            query.cancel();
+        }
+    }, [account, address, pageFollowers]);
+
+    // ~~~ Fetching data for Following ~~~
+    useEffect(() => {
+        if(!account || !address) return;
+
+        const query = getSocialData(address, "followings", pageFollowing);
+        query
+            .then(res => {
+                setStateFollowing(prev => {
+                    return {
+                        data: [...prev.data, ...res.followings],
+                        loading: false,
+                        error: ""
+                    };
+                });
+            })
+            .catch(err => {
+                if(isAbortError(err)) {
+                    console.log("The user aborted a request.");
+                    setStateFollowing({
+                        data: [],
+                        loading: true,
+                        error: ""
+                    });
+                } else {
+                    console.error(err.message);
+                    setStateFollowing({
+                        data: [],
+                        loading: false,
+                        error: err.message
+                    });
+                }
+            });
+        return () => {
+            query.cancel();
+        }
+    }, [account, address, pageFollowing]);
+
+    // ~~~ Observer for Followers ~~~
     useEffect(() => {
         const target = observeFollowersRef?.current;
         if(!target) return;
@@ -65,6 +156,7 @@ export default function SocialTabs() {
         }
     }, [followers_count, setPageFollowers, observeFollowersRef, path]);
 
+    // ~~~ Observer for Following ~~~
     useEffect(() => {
         const target = observeFollowingRef?.current;
         if(!target) return;
