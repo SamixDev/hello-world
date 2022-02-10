@@ -17,11 +17,7 @@ export default function SocialTabs() {
     const observeFollowingRef = useRef(null);
     const authContext = useContext(AuthContext);
     const profileContext = useContext(ProfileContext);
-    // const stateFollowers = profileContext.stateFollowers;
-    // const stateFollowing = profileContext.stateFollowing;
     const isFollowingProfile = profileContext.isFollowingProfile;
-    // const setPageFollowers = profileContext.setPageFollowers;
-    // const setPageFollowing = profileContext.setPageFollowing;
     const followers_count = profileContext.state.data.followers_count;
     const following_count = profileContext.state.data.following_count;
     const account = authContext.account;
