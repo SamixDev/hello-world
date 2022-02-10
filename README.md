@@ -9,6 +9,7 @@ The application offers a variaty of features, such as:
 
 Project link: https://helloworld.social<br>
 Public repo: https://github.com/SamixDev/hello-world<br>
+Recorded video demo of CyberConnect API integration: https://youtu.be/Kv1_VvPineE<br>
 Recorded video demo of Unstoppable Domains Login integration: https://youtu.be/pCX0SSV39jk<br>
 
 Person of contact: <br>- Discord ID: **GodSamix#0001**<br> - Email address: samer.hd.ah@gmail.com<br>
