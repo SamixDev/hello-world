@@ -12,9 +12,6 @@ Public repo: https://github.com/SamixDev/hello-world<br>
 Recorded video demo of CyberConnect API integration: https://youtu.be/Kv1_VvPineE<br>
 Recorded video demo of Unstoppable Domains Login integration: https://youtu.be/pCX0SSV39jk<br>
 
-Person of contact: <br>- Discord ID: **GodSamix#0001**<br> - Email address: samer.hd.ah@gmail.com<br>
-Person of contact: <br>- Discord ID: **Snowdot#8235**<br> - Email address: co.pascu@gmail.com<br>
-
 ![landing](https://user-images.githubusercontent.com/39951422/153298096-8f06b77d-36e0-497c-af87-fa63eea6d912.png)
 
 # Setup
