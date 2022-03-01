@@ -1,7 +1,7 @@
 ﻿# Hello World ✨
 [Hello World](https://helloworld.social) is a social connection web application that allows users to discover their Ethereum network.
 
-The application offers a variaty of features, such as:
+The application offers a variety of features, such as:
 - **follow**/**unfollow** Ethereum addresses and get interesting **Featured profiles** and **Recommendations** users might like;
 - discover the common **NFT Collections** and **POAPs** with other addresses;
 - search for an ethereum address and check out the profile;
