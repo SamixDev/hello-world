@@ -5,6 +5,7 @@ async function getNfts(address) {
         const options = {
             chain: '0x1',
             address: address,
+            limit: 99
         }
         Moralis.Web3API.account.getNFTs(options)
             .then(res => {
